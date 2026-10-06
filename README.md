@@ -61,9 +61,9 @@ All devices are joined to a single **Tailscale** mesh, which gives me flat, encr
 | Device | Role | OS | Notes |
 |---|---|---|---|
 | **Gaming PC A** | Workstation / gaming | Fedora | AMD RX 6700 XT, WoL in BIOS |
-| **ThinkCentre** | Always-on server (A) | Ubuntu Server 26.04 LTS | 24/7 · from a cheap eBay bundle |
+| **ThinkCentre** | Always-on server (A) | Ubuntu Server 26.04 LTS | 24/7 · Lenovo ThinkCentre Tiny |
 | **Gaming PC B** ("fedora-privat") | Gaming rig | Fedora | NVIDIA RTX 3060 Ti, WoL in BIOS |
-| **Dell OptiPlex** | Always-on server (B) | Ubuntu Server 26.04 LTS | 24/7 · from a cheap eBay bundle |
+| **Dell OptiPlex** | Always-on server (B) | Ubuntu Server 26.04 LTS | 24/7 · Dell OptiPlex Micro |
 | **MacBook Air** | Daily client | macOS | Primary SSH / Moonlight client |
 | **VPS1 (Contabo)** | Self-hosting | — | 24 GB RAM, 8 vCPU |
 | **VPS2 (Hetzner)** | Self-hosting | — | 4 GB RAM, 2 vCPU |
@@ -107,7 +107,7 @@ The same pattern works for remote work sessions, hotel stays, or grabbing a file
 
 I didn't buy new. I wanted **cheap, low-power mini-PCs** — the kind that can run 24/7 without eating much electricity — so I hunted **eBay Kleinanzeigen** for a while.
 
-Eventually I found a lot: **two untested mini-PCs in non-working condition for ~€110**. One was missing its SSD, the other its power supply. I bought them anyway, fixed both up, and they became the two always-on servers (the ThinkCentre and the OptiPlex) that anchor the whole setup.
+Eventually I found a lot: **two untested mini-PCs in non-working condition for ~€110** — a **Dell OptiPlex Micro** and a **Lenovo ThinkCentre Tiny**. One was missing its SSD, the other its power supply. I bought them anyway, fixed both up, and they became the two always-on servers that anchor the whole setup. (The original listing is preserved in the [gallery](#-gallery).)
 
 > Cheap used hardware + a bit of troubleshooting = two solid 24/7 nodes. Worth it.
 
@@ -136,8 +136,14 @@ Real issues, honestly documented:
 
 ## 📸 Gallery
 
-<!-- TODO: add photos of the mini-PCs, the rack/shelf setup, and gameplay in action -->
-_Photos of the hardware and it running in action coming soon._
+![Two mini-PCs stacked on the floor — a Dell OptiPlex Micro on top of a Lenovo ThinkCentre Tiny](media/01-mini-pcs.jpg)
+*The two nodes before wiring: a **Dell OptiPlex (Micro)** and a **Lenovo ThinkCentre Tiny**, straight off the classifieds.*
+
+![Screenshot of the original eBay Kleinanzeigen listing, now deleted](media/02-kleinanzeigen-listing.jpg)
+*The original listing: "Mini PC's Dell & IBM", ~€120, pickup only — bought untested.*
+
+<!-- TODO: add a photo of the setup in action (streaming session / Moonlight with latency) -->
+_More photos of the setup in action coming soon._
 
 ---
 
