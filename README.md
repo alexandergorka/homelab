@@ -61,9 +61,9 @@ All devices are joined to a single **Tailscale** mesh, which gives me flat, encr
 | Device | Role | OS | Notes |
 |---|---|---|---|
 | **Gaming PC A** | Workstation / gaming | Fedora | AMD RX 6700 XT, WoL in BIOS |
-| **ThinkCentre** | Always-on server (A) | Ubuntu Server | 24/7 |
+| **ThinkCentre** | Always-on server (A) | Ubuntu Server 26.04 LTS | 24/7 · from a cheap eBay bundle |
 | **Gaming PC B** ("fedora-privat") | Gaming rig | Fedora | NVIDIA RTX 3060 Ti, WoL in BIOS |
-| **Dell OptiPlex** | Always-on server (B) | Ubuntu Server | 24/7 |
+| **Dell OptiPlex** | Always-on server (B) | Ubuntu Server 26.04 LTS | 24/7 · from a cheap eBay bundle |
 | **MacBook Air** | Daily client | macOS | Primary SSH / Moonlight client |
 | **VPS1 (Contabo)** | Self-hosting | — | 24 GB RAM, 8 vCPU |
 | **VPS2 (Hetzner)** | Self-hosting | — | 4 GB RAM, 2 vCPU |
@@ -103,23 +103,49 @@ The same pattern works for remote work sessions, hotel stays, or grabbing a file
 
 ---
 
+## 🛒 Where the Hardware Came From
+
+I didn't buy new. I wanted **cheap, low-power mini-PCs** — the kind that can run 24/7 without eating much electricity — so I hunted **eBay Kleinanzeigen** for a while.
+
+Eventually I found a lot: **two untested mini-PCs in non-working condition for ~€110**. One was missing its SSD, the other its power supply. I bought them anyway, fixed both up, and they became the two always-on servers (the ThinkCentre and the OptiPlex) that anchor the whole setup.
+
+> Cheap used hardware + a bit of troubleshooting = two solid 24/7 nodes. Worth it.
+
+---
+
 ## 🧗 Problems I Ran Into
 
 Real issues, honestly documented:
 
-- **Wake-on-LAN reliability** — the biggest headache. Needs the NIC/BIOS configured correctly on both ends, and a reliable always-on "jump" host in the target network. <!-- TODO: add specifics -->
-- **Tailscale SSH re-confirmation** — after a container restart, the SSH session sometimes needs to be re-approved in the browser. <!-- TODO: details -->
-- **Latency for remote gaming** — ~13 km over Tailscale is usually fine, but I keep an eye on it and I'm evaluating a dedicated **WireGuard site-to-site** tunnel to avoid any dependence on (and overhead from) Tailscale for streaming. <!-- TODO: latency numbers -->
-- **Two separate NAT'd networks** — Apartment A (FritzBox) and B (Vodafone) are independent; a mesh VPN is the simplest way to bridge them without port forwarding.
-- **Dokploy / self-hosting wrinkles** — <!-- TODO: what exactly bit you here? -->
+- **Sourcing the hardware** — buying *untested* machines is a gamble. One mini-PC had no SSD, the other no PSU. Getting both to boot took some detective work, but the price made it worth it.
+- **Installing Ubuntu Server & SSH** — I installed **Ubuntu Server 26.04 LTS** (I figured: if I'm doing this now, use the latest LTS). I had trouble getting **SSH** running properly — in the end I **reinstalled both servers from scratch** to get a clean, working state. Lesson: a clean reinstall is often faster than chasing a weird config issue.
+- **Remote gaming latency** — measured latency while gaming is **under 20 ms**. At 60 FPS that's roughly **one frame behind**, which is totally acceptable for singleplayer. I'm watching whether that holds up for more latency-sensitive games.
+- **Two separate NAT'd networks** — Apartment A (FritzBox) and B (Vodafone) are independent networks; a mesh VPN is the simplest way to bridge them without port forwarding.
 
-> **TODO:** Fill in the specifics — exact error messages, fixes, and "gotchas" are the most valuable part of a repo like this.
+---
+
+## 📊 Measured Results
+
+| Metric | Value |
+|---|---|
+| Remote gaming latency | **< 20 ms** |
+| Effective delay @ 60 FPS | **~1 frame** |
+| Verdict | Great for singleplayer; watching latency-sensitive titles |
+
+---
+
+## 📸 Gallery
+
+<!-- TODO: add photos of the mini-PCs, the rack/shelf setup, and gameplay in action -->
+_Photos of the hardware and it running in action coming soon._
 
 ---
 
 ## 🛣️ Roadmap
 
-- [ ] Evaluate **WireGuard site-to-site** as a Tailscale alternative (or complement) for streaming.
+- [ ] Evaluate **WireGuard site-to-site** as a Tailscale alternative (or complement) for streaming — mainly to reduce any latency overhead.
+- [ ] Add hardware photos to the gallery.
+- [ ] Document the WoL setup (NIC/BIOS config + the always-on "jump" host) in detail.
 - [ ] Add monitoring / uptime alerts for the servers.
 - [ ] Add a **subnet router** so non-Tailscale devices can be reached.
 - [ ] Reverse proxy + proper TLS for all self-hosted services.
@@ -130,7 +156,8 @@ Real issues, honestly documented:
 ## 📚 Lessons Learned
 
 - An **always-on low-power box** in each location is worth more than any single piece of hardware — it's the anchor for WoL, streaming, and management.
-- **Don't over-rely on one overlay network.** Convenience is great, but understanding the fallback path matters.
+- **Used/untested hardware can be a bargain** if you're willing to diagnose it. Two broken mini-PCs became two reliable servers.
+- **A clean reinstall beats chasing bugs** — when SSH refused to cooperate, reinstalling Ubuntu Server solved it faster than debugging.
 - Document as you go. Future-you will not remember why something is configured the way it is.
 
 ---
