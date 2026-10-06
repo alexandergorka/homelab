@@ -175,6 +175,12 @@ _More photos of the setup in action coming soon._
 
 ---
 
+## 🤝 Acknowledgements
+
+Parts of this documentation were drafted, structured, and maintained with help from **OpenClaw** — my self-hosted AI assistant ("Carlos"). It helped write this README, organised the sections, and keeps the repo up to date.
+
+---
+
 ## 📄 License
 
 <!-- TODO: pick one, e.g. MIT, or "All rights reserved" -->
