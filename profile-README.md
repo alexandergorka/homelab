@@ -1,11 +1,12 @@
 # Hi, I'm Alexander 👋
 
-I tinker with self-hosting, networking, and Linux — usually while trying to make two apartments behave like one.
+**Software Developer** with a focus on **Java** and **backend** engineering. I build server-side systems, APIs, and the plumbing behind them — and privately I also work with **Rust, C++ and React**.
 
-- 🏠 **Homelab:** a two-apartment setup with always-on servers, remote Wake-on-LAN, and game streaming between locations → [**read the write-up**](https://github.com/alexandergorka/homelab)
-- 🖥️ **Interests:** Linux, self-hosting, VPN/mesh networking, automation, AI tooling
-- 🌱 Currently exploring: WireGuard site-to-site, self-hosted stacks on Dokploy
+- 🔧 **Main focus:** Java · backend · APIs · server-side architecture
+- 🧰 **Also work with:** Rust, C++, React (private projects)
+- 🏠 **Homelab:** self-hosting, networking, and streaming games between two apartments → [read the write-up](https://github.com/alexandergorka/homelab)
+- 🌱 Currently exploring: self-hosted stacks, mesh/VPN networking, AI tooling
 
 ---
 
-<sub>⚡ _"If it can be self-hosted, it probably will be."</sub>
+<sub>⚡ _"Backend by day, homelab by night."</sub>

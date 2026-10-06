@@ -79,6 +79,13 @@ All devices are joined to a single **Tailscale** mesh, which gives me flat, encr
 **Streaming**
 - **Sunshine** (host) + **Moonlight** (client) for low-latency game streaming.
 
+**Services on the 24/7 servers (Docker)**
+The always-on mini-PCs run a small stack of containers that the whole setup depends on:
+- **Nginx** — reverse proxy, so I can point domains at the right service behind a single clean entry point.
+- **Pi-hole** — network-wide DNS, mostly so I don't get ads anywhere on the network.
+- **GPT-WOL** — a Wake-on-LAN tool with a nice web UI to boot machines remotely.
+- **Tailscale** — the mesh VPN that ties everything together.
+
 **Self-hosted services (VPS)**
 - **Dokploy** — deployment platform (Traefik reverse proxy, Postgres).
 - **OpenClaw** — personal AI assistant / automation gateway.
