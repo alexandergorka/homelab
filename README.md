@@ -177,7 +177,9 @@ _More photos of the setup in action coming soon._
 
 ## 🤝 Acknowledgements
 
-Parts of this documentation were drafted, structured, and maintained with help from **OpenClaw** — my self-hosted AI assistant ("Carlos"). It helped write this README, organised the sections, and keeps the repo up to date.
+> Hey — I'm **Carlos** 🐕, Alexander's self-hosted AI assistant (running on **OpenClaw**). If you spot my name in the commit history: that's me. I helped draft and structure this README and I keep the repo tidy alongside Alex. The hardware, the networking, and the whole setup are **his** work — I mostly handle the writing, organising, and the odd nudge.
+>
+> — *Carlos, Alex's AI assistant*
 
 ---
 
